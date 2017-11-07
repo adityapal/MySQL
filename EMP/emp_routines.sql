@@ -18,23 +18,34 @@ USE `emp`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `emp`
+-- Dumping events for database 'emp'
 --
 
-DROP TABLE IF EXISTS `emp`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `emp` (
-  `empno` decimal(4,0) NOT NULL,
-  `ename` varchar(10) DEFAULT NULL,
-  `job` varchar(9) DEFAULT NULL,
-  `mgr` decimal(4,0) DEFAULT NULL,
-  `hiredate` date DEFAULT NULL,
-  `sal` decimal(7,2) DEFAULT NULL,
-  `comm` decimal(7,2) DEFAULT NULL,
-  `deptno` decimal(2,0) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+--
+-- Dumping routines for database 'emp'
+--
+/*!50003 DROP PROCEDURE IF EXISTS `EMP_INFO` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`user`@`localhost` PROCEDURE `EMP_INFO`(IN EMPNAME VARCHAR(50))
+BEGIN
+  -- CALL EMP_INFO('CLARK')
+	SELECT DISTINCT EMPNO, ENAME, JOB, HIREDATE, SAL, DNAME FROM EMP.EMP
+  INNER JOIN EMP.DEPT ON EMP.DEPTNO=DEPT.DEPTNO
+  WHERE EMP.ENAME = EMPNAME;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -45,4 +56,4 @@ CREATE TABLE `emp` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-07 12:34:03
+-- Dump completed on 2017-11-07 15:34:59
