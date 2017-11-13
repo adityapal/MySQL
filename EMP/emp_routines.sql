@@ -16,10 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping events for database 'emp'
---
-
---
 -- Dumping routines for database 'emp'
 --
 /*!50003 DROP FUNCTION IF EXISTS `EMP_SALARY` */;
@@ -74,4 +70,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-07 15:46:16
+-- Dump completed on 2017-11-13 14:34:37

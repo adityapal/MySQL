@@ -16,25 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `emp`
---
-
-DROP TABLE IF EXISTS `emp`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `emp` (
-  `empno` decimal(4,0) NOT NULL,
-  `ename` varchar(10) DEFAULT NULL,
-  `job` varchar(9) DEFAULT NULL,
-  `mgr` decimal(4,0) DEFAULT NULL,
-  `hiredate` date DEFAULT NULL,
-  `sal` decimal(7,2) DEFAULT NULL,
-  `comm` decimal(7,2) DEFAULT NULL,
-  `deptno` decimal(2,0) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
 -- Dumping data for table `emp`
 --
 
@@ -53,4 +34,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-07 15:46:16
+-- Dump completed on 2017-11-13 14:34:37
